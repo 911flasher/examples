@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Calibri, sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.btn {
+    padding: 8px 12px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000;
+    border: 0;
+    border-radius: 6px;
+    outline: 0;
+    cursor: pointer;
+    transition: background-color .75s, color .75s;
+}
+
+.btn:focus {
+  box-shadow: 0 0 3px 2px #52bbed;
+}
+
+.btn:hover {
+    color: #000;
+    background-color: #e6e6fa;
+}
+
+.input {
+  padding: 8px;
+  margin: 8px;
+  border-radius: 6px;
+  border-color: #458b74;
+  outline: none;
+}
+
+.text-input {
+  min-width: 300px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}

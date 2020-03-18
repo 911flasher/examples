@@ -1,0 +1,14 @@
+.Header {
+  padding: 20px;
+  margin-bottom: 24px;
+  background-color: #222;
+  color: white;
+}
+
+.Header__logo {
+  height: 80px;
+}
+
+.Header .btn {
+  border: 1px solid #458b74;
+}
