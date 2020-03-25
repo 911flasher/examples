@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,UACI,iBACJ,CACA,SACI,YAAa,CACb,uCACF","file":"main.c6e4ccf5.chunk.css","sourcesContent":["html, body {\n    font-family: Khand;\n}\n.wrapper {\n    display: grid;\n    grid-template-columns: 200px 200px 200px;\n  }"]}
