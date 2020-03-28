@@ -23,8 +23,14 @@ const api = {
     limit:10
 };
 
-
 class Homepage extends React.Component {
+  constructor(props){
+    super(props);
+    this.loadItems = this.loadItems.bind(this);
+    this.getURLResp = this.getURLResp.bind(this);
+    this.getURL = this.getURL.bind(this);
+  }
+
   state = {
     images: [],
     items: 10,
@@ -34,56 +40,46 @@ class Homepage extends React.Component {
     hasMoreItems: true,
     pageIndex:1
   };
-  
-  ///
-  loadItems(page) {
-    
-    if(this.state.loadingState){
+
+  loadItems = (page)=>{
+      if(this.state.loadingState){
       return;
     }
-    
-    var self = this;
-    var url = api.baseUrl /*+ '/users/8665091/favorites'*/;
-   // const [ storeTracks, setTracks ] = useStore('homeStore');
-  
+    var url = api.baseUrl;
     qwest.get(url, {
-           // client_id: api.client_id,
-           page: this.state.pageIndex,
-           limit: api.limit
+          page: this.state.pageIndex,
+          limit: api.limit
         }, {
             cache: true
-        })
-        .then(function(xhr, resp) {
-            if(resp) {
-                var tracks = self.state.tracks;
-                resp.map((track) => {
-                    /*if(track.artwork_url == null) {
-                        track.artwork_url = track.user.avatar_url;
-                    }*/
-                    tracks.push(track);
-                });
-               // setTracks(tracks);
-                self.setState({ loadingState: true });
-                //delay
-                setTimeout(() => {
-                  
-                  self.setState({tracks: tracks, pageIndex: self.state.pageIndex + 1, loadingState: false });
-                  window.tracks = tracks;
-                }, 3000);
+        }).then(this.getURL);
+  };
 
-            }
-        });
-}
+  getURL = (xhr, resp) => {
+    if(resp) {
+      debugger;
+      this.getURLResp(resp);
+    }
+  }
+
+  getURLResp = (resp) => {
+    var tracks = this.state.tracks;
+    resp.map((track) => {
+        tracks.push(track);
+    });
+    this.setState({ loadingState: true });
+    setTimeout(() => {
+      this.setState({tracks: tracks, pageIndex: this.state.pageIndex + 1, loadingState: false });
+    }, 3000);
+  }
+
   likeImage = () => {};
-  /*<CardMedia
-  style={{ paddingTop: '56.25%' }}
-  image={track.download_url}
-  title={track.author}
-/>*/
+  componentDidMount(){
+
+  }
+
   render() {
-
     const loader = <div  key="1232edqda" >Loading ...</div>;
-
+    debugger;
         var items = [];
         this.state.tracks.map((track, i) => {
           items.push(
@@ -113,7 +109,7 @@ class Homepage extends React.Component {
       <>
        <InfiniteScroll
                 pageStart={0}
-                loadMore={this.loadItems.bind(this)}
+                loadMore={this.loadItems}
                 hasMore={this.state.hasMoreItems}
                 loader={loader}>
                <Layout>
@@ -122,7 +118,7 @@ class Homepage extends React.Component {
                     direction="row"
                     justify="center"
                     alignItems="flex-start" 
-                    xs={12}>
+                   >
                     
                     {items}
 
