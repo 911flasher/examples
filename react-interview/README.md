@@ -1,4 +1,5 @@
 # React interview exercise
+source - https://github.com/ifier/react-interview-exercise
 
 ### Homepage (class-based)
 1. Request first 10 images (https://picsum.photos/v2/list?page=1&limit=10)
