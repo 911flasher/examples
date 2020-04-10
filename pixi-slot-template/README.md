@@ -1,4 +1,4 @@
-#pixi-basic-template-typescript
+#pixi-typescript-slot-template
 
 ### Install
 Open your terminal and type the command `npm install` to install all dependences.

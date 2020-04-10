@@ -1,6 +1,7 @@
 import { LoadScene } from "../scenes/loader.scene";
 import { MainMenuScene } from "../scenes/ui/mainmenu";
 
+
 export class Settings
 {
     static BgColor : number = 0x232323;

@@ -20,12 +20,19 @@ export abstract class Scene {
         this.sceneContainer.visible = false;
     }
 
+    public tick(delay:number){
+
+    }
+    public resize(_x:number, _y:number,_scale:number){
+
+    }
     public destroy() {
         this.sceneContainer.removeAllListeners();
         this.sceneContainer.removeChildren();
     }
 
     protected abstract create(): void;
+
     public abstract update(delta: number): void;
 
 }

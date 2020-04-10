@@ -2,16 +2,25 @@
 <html lang="en">
 
 <head>
+    <title>pixi typescript slot template</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0, user-scalable=no" />  
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pixi Template</title>
+    <meta name="author" content="Aleksei">
+    <title>Pixi Slot Template</title>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body>
     <canvas id="canvas"></canvas>
     <script src="./build/bundle.js"></script>
-    <div id="debug" style="position: absolute; top: 0px; left: 0px; width: 120px; height: 70px; visibility: hidden">
+    <div id="debug">
         <!-- for dev purposes add stats () from: https://github.com/mrdoob/stats.js/ -->
         <script>javascript:(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//mrdoob.github.io/stats.js/build/stats.min.js';document.head.appendChild(script);})()</script>
     </div>
